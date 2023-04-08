@@ -1,5 +1,5 @@
 <div id="header" class="card">
-  <h1 class="text-2xl font-yuji">東海道中スクロール栗毛</h1>
+  <h1 class="text-3xl font-yuji">東海道中スクロール栗毛</h1>
 
   <div class="font-roman mt-2 mb-8">
     Scrollytelling the 53 Stations of the Tōkaidō in Japan
