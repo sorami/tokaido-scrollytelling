@@ -13,6 +13,44 @@
 
   const scroller = scrollama();
 
+  const updateRoadProgress = (stationNo) => {
+    if (!map) return;
+
+    map.setPaintProperty("road-1", "line-gradient", [
+      "step",
+      ["line-progress"],
+      "#eb4d4b",
+      roadProgress[stationNo].road_1,
+      "rgba(0, 0, 0, 0.6)",
+    ]);
+
+    map.setPaintProperty(
+      "boat",
+      "line-color",
+      parseInt(stationNo) < 42 ? "rgba(0, 0, 0, 0.6)" : "#eb4d4b"
+    );
+    map.setPaintProperty("road-2", "line-gradient", [
+      "step",
+      ["line-progress"],
+      "#eb4d4b",
+      roadProgress[stationNo].road_2,
+      "rgba(0, 0, 0, 0.6)",
+    ]);
+  };
+
+  const updateMapPosition = (stationNo) => {
+    if (!map) return;
+
+    const curr = stationData[stationNo];
+
+    map.flyTo({
+      center: [curr.longitude, curr.latitude],
+      zoom: 13,
+      pitch: 60,
+      bearing: 0,
+    });
+  };
+
   onMount(() => {
     scroller
       .setup({
@@ -22,40 +60,9 @@
       })
       .onStepEnter(async (response) => {
         response.element.classList.add("active");
-
-        if (!map) return;
-
         const stationNo = response.element.id;
-
-        map.setPaintProperty("road-1", "line-gradient", [
-          "step",
-          ["line-progress"],
-          "#eb4d4b",
-          roadProgress[stationNo].road_1,
-          "rgba(0, 0, 0, 0.6)",
-        ]);
-
-        map.setPaintProperty(
-          "boat",
-          "line-color",
-          parseInt(stationNo) < 42 ? "rgba(0, 0, 0, 0.6)" : "#eb4d4b"
-        );
-        map.setPaintProperty("road-2", "line-gradient", [
-          "step",
-          ["line-progress"],
-          "#eb4d4b",
-          roadProgress[stationNo].road_2,
-          "rgba(0, 0, 0, 0.6)",
-        ]);
-
-        const curr = stationData[stationNo];
-
-        map.flyTo({
-          center: [curr.longitude, curr.latitude],
-          zoom: 13,
-          pitch: 60,
-          bearing: 0,
-        });
+        updateRoadProgress(stationNo);
+        updateMapPosition(stationNo);
       })
       .onStepExit(async (response) => {
         response.element.classList.remove("active");
