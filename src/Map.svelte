@@ -15,13 +15,17 @@
       zoom: 9,
       bearing: 0,
       pitch: 60,
-      interactive: false,
+      interactive: true,
       projection: "globe",
       transition: {
         duration: 300,
         delay: 0,
       },
     });
+
+    // enable `interactive` option, but disable scroll
+    // (let the user zoom with the controll button instead)
+    map.scrollZoom.disable();
 
     map.addControl(new mapboxgl.ScaleControl(), "bottom-right");
     map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
