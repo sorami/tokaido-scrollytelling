@@ -5,7 +5,7 @@
   import Colophon from "./Colophon.svelte";
   import Station from "./Station.svelte";
   import stationData from "./assets/stations.json";
-  import progress from "./assets/progress.json";
+  import roadProgress from "./assets/progress.json";
   import scrollama from "scrollama";
   import { onMount } from "svelte";
 
@@ -31,7 +31,7 @@
           "step",
           ["line-progress"],
           "#eb4d4b",
-          progress[stationNo].road_1,
+          roadProgress[stationNo].road_1,
           "rgba(0, 0, 0, 0.6)",
         ]);
 
@@ -44,7 +44,7 @@
           "step",
           ["line-progress"],
           "#eb4d4b",
-          progress[stationNo].road_2,
+          roadProgress[stationNo].road_2,
           "rgba(0, 0, 0, 0.6)",
         ]);
 
