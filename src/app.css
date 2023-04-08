@@ -1,18 +1,18 @@
 body {
-    @apply font-base;
-    @apply text-gray-300;
+  @apply font-base;
+  @apply text-gray-300;
 }
 
 a,
 a:visited {
-    @apply text-blue-500;
-    text-decoration: none;
+  @apply text-blue-500;
+  text-decoration: none;
 }
 a:hover {
-    opacity: 0.85;
-    text-decoration: underline dashed;
+  opacity: 0.85;
+  text-decoration: underline dashed;
 }
 
 .card {
-    @apply bg-gray-800;
+  @apply bg-gray-800;
 }
