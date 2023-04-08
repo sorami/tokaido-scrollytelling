@@ -52,7 +52,7 @@
       center,
       zoom: transition.zoom ?? 13,
       pitch: transition.pitch ?? 60,
-      bearing: transition.bearing ?? 0,
+      bearing: transition.bearing ?? -60,
       speed: 0.8,
     });
   };
