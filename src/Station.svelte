@@ -20,7 +20,13 @@
     </div>
 
     <div class="mb-4">
-      <img class="rounded-lg" src={data.img_path} alt={data.name} />
+      <a href={data.wikipedia_ja} target="_blank" rel="noopener noreferrer"
+        ><img
+          class="rounded-lg hover:opacity-85"
+          src={data.img_path}
+          alt={data.name}
+        /></a
+      >
       <p class="text-xs text-center mt-2">{data.img_caption}</p>
     </div>
 
