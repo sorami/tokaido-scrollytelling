@@ -6,6 +6,7 @@
   import Station from "./Station.svelte";
   import stationData from "./assets/stations.json";
   import roadProgress from "./assets/progress.json";
+  import stationTransition from "./assets/transtion.json";
   import scrollama from "scrollama";
   import { onMount } from "svelte";
 
@@ -41,13 +42,18 @@
   const updateMapPosition = (stationNo) => {
     if (!map) return;
 
-    const curr = stationData[stationNo];
+    const center = [
+      stationData[stationNo].longitude,
+      stationData[stationNo].latitude,
+    ];
+    const transition = stationTransition[stationNo];
 
     map.flyTo({
-      center: [curr.longitude, curr.latitude],
-      zoom: 13,
-      pitch: 60,
-      bearing: 0,
+      center,
+      zoom: transition.zoom ?? 13,
+      pitch: transition.pitch ?? 60,
+      bearing: transition.bearing ?? 0,
+      speed: 0.8,
     });
   };
 
