@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import mapboxgl from "mapbox-gl";
   import "mapbox-gl/dist/mapbox-gl.css";
+  import Header from "./Header.svelte";
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
@@ -30,6 +31,7 @@
 </script>
 
 <main>
+  <Header />
   <div id="map" />
 </main>
 
