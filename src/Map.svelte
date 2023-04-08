@@ -7,6 +7,77 @@
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
+  const addRoadLayers = () => {
+    map.addSource("road-1-src", {
+      type: "geojson",
+      data: "roads/Tokaido1_v3.geojson",
+      lineMetrics: true,
+    });
+    map.addLayer({
+      id: "road-1",
+      type: "line",
+      source: "road-1-src",
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+      paint: {
+        "line-width": 6,
+        "line-gradient": [
+          "step",
+          ["line-progress"],
+          "#eb4d4b",
+          0,
+          "rgba(0, 0, 0, 0.6)",
+        ],
+      },
+    });
+
+    map.addSource("boat-src", {
+      type: "geojson",
+      data: "roads/tokaido_boat.geojson",
+    });
+    map.addLayer({
+      id: "boat",
+      type: "line",
+      source: "boat-src",
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+      paint: {
+        "line-width": 6,
+        "line-color": "rgba(0, 0, 0, 0.6)",
+        "line-dasharray": [1, 2],
+      },
+    });
+
+    map.addSource("road-2-src", {
+      type: "geojson",
+      data: "roads/Tokaido2_v3.geojson",
+      lineMetrics: true,
+    });
+    map.addLayer({
+      id: "road-2",
+      type: "line",
+      source: "road-2-src",
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+      paint: {
+        "line-width": 6,
+        "line-gradient": [
+          "step",
+          ["line-progress"],
+          "#eb4d4b",
+          0,
+          "rgba(0, 0, 0, 0.6)",
+        ],
+      },
+    });
+  };
+
   const addStationLayers = () => {
     map.addSource("station-src", {
       type: "geojson",
@@ -76,6 +147,7 @@
     map.addControl(new mapboxgl.GeolocateControl(), "bottom-left");
 
     map.on("load", () => {
+      addRoadLayers();
       addStationLayers();
     });
   });
