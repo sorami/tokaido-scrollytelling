@@ -30,8 +30,8 @@
 - `preprocess/stations/extracts.ipynb`
   - Extracts (article abstract) from Wikipedia Japanese, English
   - Creates `preprocess/stations/extracts.json`
-- `preprocess/stations/info.ipynb`
-  - Creates `public/stations/info.json`
+- `preprocess/stations/stations.ipynb`
+  - Creates `src/assets/stations.json`
 
 ```json
 [
