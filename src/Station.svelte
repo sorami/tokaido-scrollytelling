@@ -12,7 +12,7 @@
   const alignment = data.no % 2 == 0 ? "righty" : "lefty";
 </script>
 
-<div id={data.no} class="wrapper {alignment}">
+<div id={data.no} class="step wrapper {alignment}">
   <div class="content bg-gray-900/95 rounded-md">
     <div class="text-center flex flex-col mb-4">
       <div class="text-xs font-roman">{@html reading}</div>
