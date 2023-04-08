@@ -4,11 +4,13 @@ import {
   presetUno,
   presetWebFonts,
 } from "unocss";
+import transformerDirectives from "@unocss/transformer-directives";
 import { extractorSvelte } from "@unocss/core";
 
 export default defineConfig({
   extractors: [extractorSvelte],
   shortcuts: [],
+  transformers: [transformerDirectives()],
   presets: [
     presetAttributify(),
     presetUno(),
