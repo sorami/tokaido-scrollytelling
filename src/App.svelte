@@ -81,7 +81,7 @@
 
   <Header />
 
-  <div id="station-container">
+  <div>
     {#each stationData as data}
       <Station {data} />
     {/each}
@@ -93,11 +93,6 @@
 </main>
 
 <style>
-  #station-container {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-  }
-
   :global(.step) {
     opacity: 0.3 !important;
   }

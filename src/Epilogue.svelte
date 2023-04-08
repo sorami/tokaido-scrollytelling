@@ -22,7 +22,8 @@
     z-index: 5;
     width: 90vw;
     margin: 0 auto;
-    padding-bottom: 50vh;
+    padding-top: 10vh;
+    padding-bottom: 60vh;
     opacity: 0.85;
   }
 </style>
