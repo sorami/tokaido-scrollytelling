@@ -3,6 +3,8 @@
   import mapboxgl from "mapbox-gl";
   import "mapbox-gl/dist/mapbox-gl.css";
   import Header from "./Header.svelte";
+  import Station from "./Station.svelte";
+  import stationData from "./assets/stations.json";
 
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
@@ -16,7 +18,7 @@
       zoom: 9,
       bearing: 0,
       pitch: 60,
-      interactive: true,
+      interactive: false,
       projection: "globe",
       transition: {
         duration: 300,
@@ -88,7 +90,14 @@
 
 <main>
   <Header />
+
   <div id="map" />
+
+  <div id="station-container">
+    {#each stationData as data}
+      <Station {data} />
+    {/each}
+  </div>
 </main>
 
 <style>
@@ -97,5 +106,10 @@
     height: 100vh;
     width: 100vw;
     position: fixed;
+  }
+
+  #station-container {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
   }
 </style>
