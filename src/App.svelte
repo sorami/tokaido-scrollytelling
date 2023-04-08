@@ -28,15 +28,16 @@
     map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
     map.addControl(new mapboxgl.GeolocateControl(), "bottom-left");
 
-    map.on("load", () => {
-      map.addSource("stations-src", {
+    const addStationLayers = () => {
+      map.addSource("station-src", {
         type: "geojson",
         data: "stations/points.geojson",
       });
+
       map.addLayer({
-        id: "stations-circle",
+        id: "station-circle",
         type: "circle",
-        source: "stations-src",
+        source: "station-src",
         layout: {},
         paint: {
           "circle-color": "rgba(31,41,55,1)",
@@ -54,10 +55,11 @@
           "circle-opacity": 1,
         },
       });
+
       map.addLayer({
-        id: "stations-label",
+        id: "station-label",
         type: "symbol",
-        source: "stations-src",
+        source: "station-src",
         layout: {
           "text-field": ["get", "no"],
           "text-size": [
@@ -76,6 +78,10 @@
           "text-color": "#fff",
         },
       });
+    };
+
+    map.on("load", () => {
+      addStationLayers();
     });
   });
 </script>
