@@ -8,6 +8,8 @@
   import scrollama from "scrollama";
   import { onMount } from "svelte";
 
+  let map;
+
   const scroller = scrollama();
 
   onMount(() => {
@@ -19,6 +21,15 @@
       })
       .onStepEnter(async (response) => {
         response.element.classList.add("active");
+        const curr = stationData[response.element.id];
+
+        if (!map) return;
+        map.flyTo({
+          center: [curr.longitude, curr.latitude],
+          zoom: 13,
+          pitch: 60,
+          bearing: 0,
+        });
       })
       .onStepExit(async (response) => {
         response.element.classList.remove("active");
@@ -27,7 +38,7 @@
 </script>
 
 <main>
-  <Map />
+  <Map bind:map />
 
   <Header />
 

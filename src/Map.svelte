@@ -3,10 +3,12 @@
   import mapboxgl from "mapbox-gl";
   import "mapbox-gl/dist/mapbox-gl.css";
 
+  export let map;
+
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
   onMount(async () => {
-    const map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
       container: "map",
       style: `https://api.maptiler.com/maps/jp-mierune-streets/style.json?key=${
         import.meta.env.VITE_MAPTILER_KEY
