@@ -27,6 +27,56 @@
     map.addControl(new mapboxgl.ScaleControl(), "bottom-right");
     map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
     map.addControl(new mapboxgl.GeolocateControl(), "bottom-left");
+
+    map.on("load", () => {
+      map.addSource("stations-src", {
+        type: "geojson",
+        data: "stations/points.geojson",
+      });
+      map.addLayer({
+        id: "stations-circle",
+        type: "circle",
+        source: "stations-src",
+        layout: {},
+        paint: {
+          "circle-color": "rgba(31,41,55,1)",
+          "circle-radius": [
+            "interpolate",
+            ["linear"],
+            ["zoom"],
+            4,
+            0,
+            8,
+            3,
+            10,
+            12,
+          ],
+          "circle-opacity": 1,
+        },
+      });
+      map.addLayer({
+        id: "stations-label",
+        type: "symbol",
+        source: "stations-src",
+        layout: {
+          "text-field": ["get", "no"],
+          "text-size": [
+            "interpolate",
+            ["linear"],
+            ["zoom"],
+            4,
+            0,
+            8,
+            3,
+            10,
+            12,
+          ],
+        },
+        paint: {
+          "text-color": "#fff",
+        },
+      });
+    });
   });
 </script>
 
