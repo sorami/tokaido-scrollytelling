@@ -21,5 +21,8 @@
     "typescript": "^4.9.3",
     "unocss": "^0.50.7",
     "vite": "^4.2.0"
+  },
+  "dependencies": {
+    "mapbox-gl": "^2.13.0"
   }
 }
