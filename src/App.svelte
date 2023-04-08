@@ -39,6 +39,27 @@
     ]);
   };
 
+  const updateStationCircle = (stationNo) => {
+    map.setPaintProperty("station-circle", "circle-color", [
+      "case",
+      ["==", ["get", "no"], stationNo],
+      "#eb4d4b",
+      "rgba(31,41,55,1)",
+    ]);
+
+    map.setPaintProperty("station-circle", "circle-radius", [
+      "interpolate",
+      ["linear"],
+      ["zoom"],
+      6,
+      ["case", ["==", ["get", "no"], stationNo], 10, 0],
+      8,
+      ["case", ["==", ["get", "no"], stationNo], 18, 12],
+      10,
+      ["case", ["==", ["get", "no"], stationNo], 24, 12],
+    ]);
+  };
+
   const updateMapPosition = (stationNo) => {
     if (!map) return;
 
@@ -67,6 +88,7 @@
       .onStepEnter(async (response) => {
         response.element.classList.add("active");
         const stationNo = response.element.id;
+        updateStationCircle(stationNo);
         updateRoadProgress(stationNo);
         updateMapPosition(stationNo);
       })
