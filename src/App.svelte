@@ -95,6 +95,7 @@
 <style>
   :global(.step) {
     opacity: 0.3 !important;
+    transition: opacity 800ms;
   }
   :global(.step.active) {
     opacity: 1 !important;
