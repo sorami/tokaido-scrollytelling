@@ -120,6 +120,27 @@
     });
   };
 
+  const add3dTerrain = () => {
+    map.setFog({
+      range: [0.8, 8],
+      color: "#dc9f9f",
+      "horizon-blend": 0.5,
+      "high-color": "#245bde",
+      "space-color": "#000000",
+      "star-intensity": 0.15,
+    });
+
+    map.addSource("mapbox-dem", {
+      type: "raster-dem",
+      url: "mapbox://mapbox.mapbox-terrain-dem-v1",
+    });
+
+    map.setTerrain({
+      source: "mapbox-dem",
+      exaggeration: 2.5,
+    });
+  };
+
   onMount(async () => {
     map = new mapboxgl.Map({
       container: "map",
@@ -146,9 +167,10 @@
     map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
     map.addControl(new mapboxgl.GeolocateControl(), "bottom-left");
 
-    map.on("load", () => {
+    map.on("load", async () => {
       addRoadLayers();
       addStationLayers();
+      add3dTerrain;
     });
   });
 </script>
