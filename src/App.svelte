@@ -3,6 +3,7 @@
   import mapboxgl from "mapbox-gl";
   import "mapbox-gl/dist/mapbox-gl.css";
   import Header from "./Header.svelte";
+  import Colophon from "./Colophon.svelte";
   import Station from "./Station.svelte";
   import stationData from "./assets/stations.json";
 
@@ -98,6 +99,8 @@
       <Station {data} />
     {/each}
   </div>
+
+  <Colophon />
 </main>
 
 <style>
