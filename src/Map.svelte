@@ -172,6 +172,12 @@
       addStationLayers();
       add3dTerrain;
     });
+
+    map.on("click", "station-circle", (e) => {
+      const stationNo = e.features[0].properties.no;
+      const el = document.getElementById(stationNo);
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
   });
 </script>
 
