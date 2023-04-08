@@ -5,19 +5,9 @@
 
 <div id={data.no} class="step wrapper {alignment}">
   <div class="content card rounded-md">
-    <div
-      class="mb-4 flex items-center justify-center gap-x-5"
-      class:mr-5={1 <= data.no && data.no <= 53}
-    >
-      {#if 1 <= data.no && data.no <= 53}
-        <div class="text-lg font-yuji">
-          {data.no}
-        </div>
-      {/if}
-      <div class="text-center flex flex-col">
-        <div class="text-2 font-roman">{data.name_roman}</div>
-        <h2 class="text-xl font-yuji">{data.name}</h2>
-      </div>
+    <div class="text-center flex flex-col mb-4">
+      <div class="text-2 font-roman">{data.name_roman}</div>
+      <h2 class="text-xl font-yuji">{data.name}</h2>
     </div>
 
     <div class="mb-4">
