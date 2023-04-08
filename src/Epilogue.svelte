@@ -18,6 +18,7 @@
 
 <style>
   #epilogue {
+    position: relative;
     z-index: 5;
     width: 90vw;
     margin: 0 auto;

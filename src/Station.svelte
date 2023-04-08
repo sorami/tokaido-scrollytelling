@@ -13,7 +13,7 @@
 </script>
 
 <div id={data.no} class="step wrapper {alignment}">
-  <div class="content bg-gray-900/95 rounded-md">
+  <div class="content card rounded-md">
     <div class="text-center flex flex-col mb-4">
       <div class="text-xs font-roman">{@html reading}</div>
       <h2 class="text-2xl font-yuji">{title}</h2>
@@ -43,6 +43,7 @@
 
 <style>
   .wrapper {
+    position: relative;
     z-index: 5;
     width: 33vw;
     padding-bottom: 50vh;

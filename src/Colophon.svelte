@@ -56,6 +56,7 @@
 
 <style>
   #colophon {
+    position: relative;
     z-index: 5;
     margin: auto;
     width: 100%;

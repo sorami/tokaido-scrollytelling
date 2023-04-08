@@ -38,6 +38,7 @@
 
 <style>
   #header {
+    position: relative;
     z-index: 5;
     margin: auto;
     width: 100%;
