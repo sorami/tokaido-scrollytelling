@@ -74,6 +74,16 @@
       bearing: transition.bearing ?? -60,
       speed: 0.8,
     });
+
+    if (transition.rotate) {
+      map.once("moveend", () => {
+        const rotateNumber = map.getBearing();
+        map.rotateTo(rotateNumber + 180, {
+          duration: 60000,
+          easing: (t) => t,
+        });
+      });
+    }
   };
 
   onMount(() => {
