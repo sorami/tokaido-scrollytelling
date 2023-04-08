@@ -63,10 +63,8 @@
   const updateMapPosition = (stationNo) => {
     if (!map) return;
 
-    const center = [
-      stationData[stationNo].longitude,
-      stationData[stationNo].latitude,
-    ];
+    const data = stationData[stationNo];
+    const center = data ? [data.longitude, data.latitude] : [139, 35.681];
     const transition = stationTransition[stationNo];
 
     map.flyTo({
