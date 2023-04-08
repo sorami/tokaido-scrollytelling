@@ -2,7 +2,7 @@
 </script>
 
 <main>
-  <h1 text="2xl center green-500" font="bold">東海道中スクロール栗毛</h1>
+  <h1 text="3xl center gray-500" font-yuji mt-36>Lorem ipsum</h1>
 </main>
 
 <style>
