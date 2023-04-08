@@ -54,6 +54,13 @@
   .wrapper.righty {
     margin-left: 62vw;
   }
+  @media (max-width: 768px) {
+    .wrapper.lefty,
+    .wrapper.righty {
+      width: 84vw;
+      margin: 0 auto;
+    }
+  }
 
   .content {
     opacity: 0.9;
