@@ -1,22 +1,23 @@
 <script>
   export let data;
-
-  const title =
-    1 <= data.no && data.no <= 53 ? `${data.no}. ${data.name}` : data.name;
-
-  const reading =
-    1 <= data.no && data.no <= 53
-      ? `&emsp;&emsp;&ensp;${data.name_roman}`
-      : data.name_roman;
-
   const alignment = data.no % 2 == 0 ? "righty" : "lefty";
 </script>
 
 <div id={data.no} class="step wrapper {alignment}">
   <div class="content card rounded-md">
-    <div class="text-center flex flex-col mb-4">
-      <div class="text-xs font-roman">{@html reading}</div>
-      <h2 class="text-2xl font-yuji">{title}</h2>
+    <div
+      class="mb-4 flex items-center justify-center gap-x-5"
+      class:mr-5={1 <= data.no && data.no <= 53}
+    >
+      {#if 1 <= data.no && data.no <= 53}
+        <div class="text-lg font-yuji">
+          {data.no}
+        </div>
+      {/if}
+      <div class="text-center flex flex-col">
+        <div class="text-2 font-roman">{data.name_roman}</div>
+        <h2 class="text-xl font-yuji">{data.name}</h2>
+      </div>
     </div>
 
     <div class="mb-4">
@@ -30,14 +31,14 @@
       <p class="text-xs text-center mt-2">{data.img_caption}</p>
     </div>
 
-    <div class="text-xs flex flex-col gap-y-3 leading-none opacity-75">
+    <div class="text-xs flex flex-col gap-y-3 opacity-75 leading-tight">
       <p>
         "{data.extract_ja}"
         <a href={data.wikipedia_ja} target="_blank" rel="noopener noreferrer"
           >Wikipedia (ja)</a
         >
       </p>
-      <p>
+      <p class="font-roman text-1">
         "{data.extract_en}"
         <a href={data.wikipedia_en} target="_blank" rel="noopener noreferrer"
           >Wikipedia (en)</a
