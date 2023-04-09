@@ -13,6 +13,7 @@
   import roadProgress from "./assets/progress.json";
   import stationTransition from "./assets/transtion.json";
   import scrollama from "scrollama";
+  import bearing from "@turf/bearing";
   import { onMount } from "svelte";
 
   let map;
@@ -66,6 +67,18 @@
     );
   };
 
+  const calculateBearing = (stationNo: string) => {
+    const no = parseInt(stationNo);
+    if (!(1 <= no && no <= 53)) {
+      return 0; // default bearing
+    }
+
+    // Bearing from the current station to the next station
+    const curr = [stationData[no].longitude, stationData[no].latitude];
+    const next = [stationData[no + 1].longitude, stationData[no + 1].latitude];
+    return bearing(curr, next);
+  };
+
   const updateMapPosition = (stationNo) => {
     if (!map) return;
 
@@ -84,11 +97,13 @@
     ];
     const transition = stationTransition[stationNo];
 
+    console.log(calculateBearing(stationNo));
+
     map.flyTo({
       center,
       zoom: transition.zoom ?? 13,
       pitch: transition.pitch ?? 60,
-      bearing: transition.bearing ?? -60,
+      bearing: transition.bearing ?? calculateBearing(stationNo),
       speed: 0.8,
     });
 
