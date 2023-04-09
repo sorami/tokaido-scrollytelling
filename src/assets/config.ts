@@ -1,8 +1,4 @@
 export const MAP_CONFIG = {
-  bounds: [
-    [135.774361, 34.684389],
-    [139.774444, 35.683611],
-  ],
   lineWidth: 6,
   progressColor: "#eb4d4b",
   nonProgressColor: "rgba(0, 0, 0, 0.7)",
@@ -16,6 +12,14 @@ export const MAP_CONFIG = {
     "space-color": "#000000",
     "star-intensity": 0.15,
   },
+  bounds: [
+    [135.774361, 34.684389],
+    [139.774444, 35.683611],
+  ],
+  style: `https://api.maptiler.com/maps/jp-mierune-streets/style.json?key=${
+    import.meta.env.VITE_MAPTILER_KEY
+  }`,
+  demSource: "mapbox://mapbox.mapbox-terrain-dem-v1",
 };
 
 export const createCircleRadiusExpression = (stationNo: string) => {

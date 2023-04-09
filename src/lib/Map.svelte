@@ -108,7 +108,7 @@
 
     map.addSource("mapbox-dem", {
       type: "raster-dem",
-      url: "mapbox://mapbox.mapbox-terrain-dem-v1",
+      url: MAP_CONFIG.demSource,
     });
 
     map.setTerrain({
@@ -126,9 +126,7 @@
   onMount(async () => {
     map = new mapboxgl.Map({
       container: "map",
-      style: `https://api.maptiler.com/maps/jp-mierune-streets/style.json?key=${
-        import.meta.env.VITE_MAPTILER_KEY
-      }`,
+      style: MAP_CONFIG.style,
       center: [139.767, 35.681],
       zoom: 9,
       bearing: 0,
