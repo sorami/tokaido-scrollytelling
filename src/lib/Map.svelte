@@ -141,6 +141,12 @@
     });
   };
 
+  const onClickStation = (e) => {
+    const stationNo = e.features[0].properties.no;
+    const el = document.getElementById(stationNo);
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   onMount(async () => {
     map = new mapboxgl.Map({
       container: "map",
@@ -172,11 +178,8 @@
       add3dTerrain();
     });
 
-    map.on("click", "station-circle", (e) => {
-      const stationNo = e.features[0].properties.no;
-      const el = document.getElementById(stationNo);
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
-    });
+    map.on("click", "station-circle", onClickStation);
+    map.on("click", "station-label", onClickStation);
   });
 </script>
 
