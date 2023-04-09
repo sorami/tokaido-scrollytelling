@@ -1,9 +1,9 @@
 <script lang="ts">
-  import Map from "./Map.svelte";
-  import Header from "./Header.svelte";
-  import Epilogue from "./Epilogue.svelte";
-  import Colophon from "./Colophon.svelte";
-  import Station from "./Station.svelte";
+  import Map from "./lib/Map.svelte";
+  import Header from "./lib/Header.svelte";
+  import Epilogue from "./lib/Epilogue.svelte";
+  import Colophon from "./lib/Colophon.svelte";
+  import Station from "./lib/Station.svelte";
   import stationData from "./assets/stations.json";
   import roadProgress from "./assets/progress.json";
   import stationTransition from "./assets/transtion.json";
