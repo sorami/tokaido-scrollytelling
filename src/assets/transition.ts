@@ -21,6 +21,11 @@ export const transitionSettings = {
       bearing: -120,
       rotate: true,
     },
+    // 吉原宿, 左富士
+    "14": {
+      bearing: 20,
+      pitch: 85,
+    },
     "55": {
       zoom: 7,
       pitch: 45,
