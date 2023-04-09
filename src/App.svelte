@@ -4,6 +4,7 @@
   import Epilogue from "./lib/Epilogue.svelte";
   import Footer from "./lib/Footer.svelte";
   import Station from "./lib/Station.svelte";
+  import { MAP_CONFIG } from "./assets/config";
   import stationData from "./assets/stations.json";
   import roadProgress from "./assets/progress.json";
   import stationTransition from "./assets/transtion.json";
@@ -65,8 +66,19 @@
   const updateMapPosition = (stationNo) => {
     if (!map) return;
 
-    const data = stationData[stationNo];
-    const center = data ? [data.longitude, data.latitude] : [139, 35.681];
+    if (stationNo === "-1") {
+      map.fitBounds(MAP_CONFIG.bounds, {
+        padding: 80,
+        bearing: 0,
+        pitch: 60,
+      });
+      return;
+    }
+
+    const center = [
+      stationData[stationNo].longitude,
+      stationData[stationNo].latitude,
+    ];
     const transition = stationTransition[stationNo];
 
     map.flyTo({
@@ -113,13 +125,23 @@
 
   <Header />
 
-  <div>
+  <div id="steps">
+    <!-- Dummy step for map positioning when scrolling back -->
+    <div id="-1" class="step pb-[30vh]">
+      <div class="hidden" />
+    </div>
+
     {#each stationData as data}
       <Station {data} />
     {/each}
-  </div>
 
-  <Epilogue />
+    <Epilogue />
+
+    <!-- Dummy step for map positioning in the end -->
+    <div id="-1" class="step pt-[5vh]">
+      <div class="hidden" />
+    </div>
+  </div>
 
   <Footer />
 </main>
