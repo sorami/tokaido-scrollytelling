@@ -16,3 +16,11 @@ a:hover {
 .card {
   @apply bg-gray-800;
 }
+
+/* cf. https://github.com/mapbox/storytelling/ */
+/* Fix issue on mobile browser where scroll breaks */
+.mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
+.mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan
+  .mapboxgl-canvas {
+  touch-action: unset;
+}
