@@ -8,6 +8,14 @@ export const MAP_CONFIG = {
   nonProgressColor: "rgba(0, 0, 0, 0.7)",
   lineDashArray: [1, 2],
   circleColor: "rgba(31,41,55,1)",
+  fogSettings: {
+    range: [0.8, 8],
+    color: "#dc9f9f",
+    "horizon-blend": 0.5,
+    "high-color": "#245bde",
+    "space-color": "#000000",
+    "star-intensity": 0.15,
+  },
 };
 
 export const createCircleRadiusExpression = (stationNo: string) => {
