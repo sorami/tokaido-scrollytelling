@@ -169,7 +169,7 @@
     map.on("load", async () => {
       addRoadLayers();
       addStationLayers();
-      add3dTerrain;
+      add3dTerrain();
     });
 
     map.on("click", "station-circle", (e) => {
