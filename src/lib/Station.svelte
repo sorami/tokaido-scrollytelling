@@ -21,7 +21,9 @@
       <p class="text-xs text-center mt-2">{data.img_caption}</p>
     </div>
 
-    <div class="text-xs flex flex-col gap-y-3 opacity-75 leading-tight">
+    <div
+      class="description-pc text-xs flex flex-col gap-y-3 opacity-75 leading-tight"
+    >
       <p>
         "{data.extract_ja}"
         <a href={data.wikipedia_ja} target="_blank" rel="noopener noreferrer"
@@ -34,6 +36,17 @@
           >Wikipedia (en)</a
         >
       </p>
+    </div>
+    <div class="description-mobile text-xs text-center">
+      <a href={data.wikipedia_ja} target="_blank" rel="noopener noreferrer"
+        >Wikipedia (ja)</a
+      >,
+      <a
+        class="font-roman"
+        href={data.wikipedia_en}
+        target="_blank"
+        rel="noopener noreferrer">Wikipedia (en)</a
+      >
     </div>
   </div>
 </div>
@@ -52,19 +65,33 @@
   .wrapper.righty {
     margin-left: 62vw;
   }
+
+  .content {
+    opacity: 0.9;
+    padding: 2em 1.5em;
+  }
+
+  .description-pc {
+    display: block;
+  }
+  .description-mobile {
+    display: none;
+  }
+
   @media (max-width: 768px) {
     .wrapper {
-      padding-bottom: 100vh;
+      padding-bottom: 70vh;
     }
     .wrapper.lefty,
     .wrapper.righty {
       width: 84vw;
       margin: 0 auto;
     }
-  }
-
-  .content {
-    opacity: 0.9;
-    padding: 2em 1.5em;
+    .description-pc {
+      display: none;
+    }
+    .description-mobile {
+      display: block;
+    }
   }
 </style>
