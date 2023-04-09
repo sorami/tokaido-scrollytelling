@@ -4,4 +4,5 @@ export const MAP_CONFIG = {
     [139.774444, 35.683611],
   ],
   progressColor: "#eb4d4b",
+  nonProgressColor: "rgba(0, 0, 0, 0.7)",
 };

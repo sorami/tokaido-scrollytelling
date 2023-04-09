@@ -23,7 +23,7 @@
       ["line-progress"],
       MAP_CONFIG.progressColor,
       roadProgress[stationNo].road_1,
-      "rgba(0, 0, 0, 0.6)",
+      MAP_CONFIG.nonProgressColor,
     ]);
 
     map.setPaintProperty(
@@ -31,14 +31,14 @@
       "line-color",
       42 <= parseInt(stationNo) && parseInt(stationNo) <= 54
         ? MAP_CONFIG.progressColor
-        : "rgba(0, 0, 0, 0.6)"
+        : MAP_CONFIG.nonProgressColor
     );
     map.setPaintProperty("road-2", "line-gradient", [
       "step",
       ["line-progress"],
       MAP_CONFIG.progressColor,
       roadProgress[stationNo].road_2,
-      "rgba(0, 0, 0, 0.6)",
+      MAP_CONFIG.nonProgressColor,
     ]);
   };
 

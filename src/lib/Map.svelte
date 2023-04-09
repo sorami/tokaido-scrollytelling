@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import mapboxgl from "mapbox-gl";
   import "mapbox-gl/dist/mapbox-gl.css";
+  import { MAP_CONFIG } from "../assets/config";
 
   export let map;
 
@@ -28,7 +29,7 @@
           ["line-progress"],
           "#eb4d4b",
           0,
-          "rgba(0, 0, 0, 0.6)",
+          MAP_CONFIG.nonProgressColor,
         ],
       },
     });
@@ -47,7 +48,7 @@
       },
       paint: {
         "line-width": 6,
-        "line-color": "rgba(0, 0, 0, 0.6)",
+        "line-color": MAP_CONFIG.nonProgressColor,
         "line-dasharray": [1, 2],
       },
     });
@@ -72,7 +73,7 @@
           ["line-progress"],
           "#eb4d4b",
           0,
-          "rgba(0, 0, 0, 0.6)",
+          MAP_CONFIG.nonProgressColor,
         ],
       },
     });
