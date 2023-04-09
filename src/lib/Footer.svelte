@@ -1,4 +1,4 @@
-<div id="colophon" class="card">
+<div id="footer" class="card">
   <div class="max-w-2xl text-center m-auto flex flex-col gap-y-5">
     <div>
       <h2>Data</h2>
@@ -55,7 +55,7 @@
 </div>
 
 <style>
-  #colophon {
+  #footer {
     position: relative;
     z-index: 5;
     margin: auto;

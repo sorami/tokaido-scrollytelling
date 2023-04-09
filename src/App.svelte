@@ -2,7 +2,7 @@
   import Map from "./lib/Map.svelte";
   import Header from "./lib/Header.svelte";
   import Epilogue from "./lib/Epilogue.svelte";
-  import Colophon from "./lib/Colophon.svelte";
+  import Footer from "./lib/Footer.svelte";
   import Station from "./lib/Station.svelte";
   import stationData from "./assets/stations.json";
   import roadProgress from "./assets/progress.json";
@@ -121,7 +121,7 @@
 
   <Epilogue />
 
-  <Colophon />
+  <Footer />
 </main>
 
 <style>
