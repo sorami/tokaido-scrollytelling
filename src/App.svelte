@@ -28,7 +28,9 @@
     map.setPaintProperty(
       "boat",
       "line-color",
-      parseInt(stationNo) < 42 ? "rgba(0, 0, 0, 0.6)" : "#eb4d4b"
+      42 <= parseInt(stationNo) && parseInt(stationNo) <= 54
+        ? "#eb4d4b"
+        : "rgba(0, 0, 0, 0.6)"
     );
     map.setPaintProperty("road-2", "line-gradient", [
       "step",
