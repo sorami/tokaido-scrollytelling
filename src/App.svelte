@@ -11,7 +11,7 @@
   } from "./assets/config";
   import stationData from "./assets/stations.json";
   import roadProgress from "./assets/progress.json";
-  import stationTransition from "./assets/transtion.json";
+  import { transitionSettings } from "./assets/transition";
   import scrollama from "scrollama";
   import bearing from "@turf/bearing";
   import { onMount } from "svelte";
@@ -95,7 +95,7 @@
       stationData[stationNo].longitude,
       stationData[stationNo].latitude,
     ];
-    const transition = stationTransition[stationNo];
+    const transition = transitionSettings[stationNo];
 
     if (transition) {
       map.flyTo({
