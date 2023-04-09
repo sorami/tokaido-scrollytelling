@@ -53,6 +53,9 @@
     margin-left: 62vw;
   }
   @media (max-width: 768px) {
+    .wrapper {
+      padding-bottom: 100vh;
+    }
     .wrapper.lefty,
     .wrapper.righty {
       width: 84vw;
