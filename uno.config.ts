@@ -26,6 +26,16 @@ export default defineConfig({
             provider: "none",
           },
         ],
+        roman: [
+          {
+            name: "Sawarabi Mincho",
+            weights: ["400"],
+          },
+          {
+            name: "serif",
+            provider: "none",
+          },
+        ],
         yuji: [
           {
             name: "Yuji Syuku",
@@ -35,7 +45,7 @@ export default defineConfig({
             provider: "none",
           },
         ],
-        roman: [
+        inknut: [
           {
             name: "Inknut Antiqua",
             weights: ["400"],

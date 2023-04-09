@@ -6,7 +6,7 @@
 <div id={data.no} class="step wrapper {alignment}">
   <div class="content card rounded-md">
     <div class="text-center flex flex-col mb-4">
-      <div class="text-2 font-roman">{data.name_roman}</div>
+      <div class="text-2 font-inknut">{data.name_roman}</div>
       <h2 class="text-xl font-yuji">{data.name}</h2>
     </div>
 
@@ -28,7 +28,7 @@
           >Wikipedia (ja)</a
         >
       </p>
-      <p class="font-roman text-1">
+      <p class="font-roman">
         "{data.extract_en}"
         <a href={data.wikipedia_en} target="_blank" rel="noopener noreferrer"
           >Wikipedia (en)</a
