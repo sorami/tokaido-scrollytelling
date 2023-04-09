@@ -9,3 +9,31 @@ export const MAP_CONFIG = {
   lineDashArray: [1, 2],
   circleColor: "rgba(31,41,55,1)",
 };
+
+export const createCircleRadiusExpression = (stationNo: string) => {
+  return [
+    "interpolate",
+    ["linear"],
+    ["zoom"],
+    6,
+    ["case", ["==", ["get", "no"], stationNo], 10, 0],
+    8,
+    ["case", ["==", ["get", "no"], stationNo], 18, 12],
+    10,
+    ["case", ["==", ["get", "no"], stationNo], 24, 12],
+  ];
+};
+
+export const createTextSizeExpression = (stationNo: string) => {
+  return [
+    "interpolate",
+    ["linear"],
+    ["zoom"],
+    6,
+    ["case", ["==", ["get", "no"], stationNo], 10, 0],
+    8,
+    ["case", ["==", ["get", "no"], stationNo], 18, 12],
+    10,
+    ["case", ["==", ["get", "no"], stationNo], 24, 12],
+  ];
+};

@@ -4,7 +4,11 @@
   import Epilogue from "./lib/Epilogue.svelte";
   import Footer from "./lib/Footer.svelte";
   import Station from "./lib/Station.svelte";
-  import { MAP_CONFIG } from "./assets/config";
+  import {
+    MAP_CONFIG,
+    createCircleRadiusExpression,
+    createTextSizeExpression,
+  } from "./assets/config";
   import stationData from "./assets/stations.json";
   import roadProgress from "./assets/progress.json";
   import stationTransition from "./assets/transtion.json";
@@ -50,17 +54,16 @@
       MAP_CONFIG.circleColor,
     ]);
 
-    map.setPaintProperty("station-circle", "circle-radius", [
-      "interpolate",
-      ["linear"],
-      ["zoom"],
-      6,
-      ["case", ["==", ["get", "no"], stationNo], 10, 0],
-      8,
-      ["case", ["==", ["get", "no"], stationNo], 18, 12],
-      10,
-      ["case", ["==", ["get", "no"], stationNo], 24, 12],
-    ]);
+    map.setPaintProperty(
+      "station-circle",
+      "circle-radius",
+      createCircleRadiusExpression(stationNo)
+    );
+    map.setLayoutProperty(
+      "station-label",
+      "text-size",
+      createTextSizeExpression(stationNo)
+    );
   };
 
   const updateMapPosition = (stationNo) => {

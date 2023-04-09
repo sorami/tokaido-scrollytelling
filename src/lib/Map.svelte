@@ -2,7 +2,11 @@
   import { onMount } from "svelte";
   import mapboxgl from "mapbox-gl";
   import "mapbox-gl/dist/mapbox-gl.css";
-  import { MAP_CONFIG } from "../assets/config";
+  import {
+    MAP_CONFIG,
+    createCircleRadiusExpression,
+    createTextSizeExpression,
+  } from "../assets/config";
 
   export let map;
 
@@ -80,17 +84,7 @@
       layout: {},
       paint: {
         "circle-color": MAP_CONFIG.circleColor,
-        "circle-radius": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          6,
-          0,
-          8,
-          10,
-          10,
-          16,
-        ],
+        "circle-radius": createCircleRadiusExpression("-1"),
         "circle-opacity": 1,
       },
     });
@@ -101,7 +95,7 @@
       source: "station-src",
       layout: {
         "text-field": ["get", "no"],
-        "text-size": ["interpolate", ["linear"], ["zoom"], 4, 0, 8, 3, 10, 16],
+        "text-size": createTextSizeExpression("-1"),
       },
       paint: {
         "text-color": "#fff",
