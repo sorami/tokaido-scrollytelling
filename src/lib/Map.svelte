@@ -27,8 +27,8 @@
         "line-cap": "round",
       },
       paint: {
-        "line-width": MAP_CONFIG.lineWidth,
-        "line-gradient": MAP_CONFIG.nonProgressColor,
+        "line-width": MAP_CONFIG.line.width,
+        "line-gradient": MAP_CONFIG.line.nonProgressColor,
       },
     });
 
@@ -45,9 +45,9 @@
         "line-cap": "round",
       },
       paint: {
-        "line-width": MAP_CONFIG.lineWidth,
-        "line-color": MAP_CONFIG.nonProgressColor,
-        "line-dasharray": MAP_CONFIG.lineDashArray,
+        "line-width": MAP_CONFIG.line.width,
+        "line-color": MAP_CONFIG.line.nonProgressColor,
+        "line-dasharray": MAP_CONFIG.line.dashArray,
       },
     });
 
@@ -65,8 +65,8 @@
         "line-cap": "round",
       },
       paint: {
-        "line-width": MAP_CONFIG.lineWidth,
-        "line-gradient": MAP_CONFIG.nonProgressColor,
+        "line-width": MAP_CONFIG.line.width,
+        "line-gradient": MAP_CONFIG.line.nonProgressColor,
       },
     });
   };
@@ -83,7 +83,7 @@
       source: "station-src",
       layout: {},
       paint: {
-        "circle-color": MAP_CONFIG.circleColor,
+        "circle-color": MAP_CONFIG.point.circleColor,
         "circle-radius": createCircleRadiusExpression("-1"),
         "circle-opacity": 1,
       },
@@ -98,22 +98,22 @@
         "text-size": createTextSizeExpression("-1"),
       },
       paint: {
-        "text-color": "#fff",
+        "text-color": MAP_CONFIG.point.textColor,
       },
     });
   };
 
   const add3dTerrain = () => {
-    map.setFog(MAP_CONFIG.fogSettings);
+    map.setFog(MAP_CONFIG.terrain.fogSettings);
 
     map.addSource("mapbox-dem", {
       type: "raster-dem",
-      url: MAP_CONFIG.demSource,
+      url: MAP_CONFIG.terrain.demSource,
     });
 
     map.setTerrain({
       source: "mapbox-dem",
-      exaggeration: 2.5,
+      exaggeration: MAP_CONFIG.terrain.exaggeration,
     });
   };
 
@@ -127,19 +127,7 @@
     map = new mapboxgl.Map({
       container: "map",
       style: MAP_CONFIG.style,
-      center: [139.767, 35.681],
-      zoom: 9,
-      bearing: 0,
-      pitch: 60,
-      // enable `interactive` option, but disable scroll
-      // (let the user zoom with the controll button instead)
-      interactive: true,
-      scrollZoom: false,
-      projection: "globe",
-      transition: {
-        duration: 300,
-        delay: 0,
-      },
+      ...MAP_CONFIG.initialMapSettings,
     });
 
     map.addControl(new mapboxgl.ScaleControl(), "bottom-right");

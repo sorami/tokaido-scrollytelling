@@ -1,16 +1,41 @@
 export const MAP_CONFIG = {
-  lineWidth: 6,
-  progressColor: "#eb4d4b",
-  nonProgressColor: "rgba(0, 0, 0, 0.7)",
-  lineDashArray: [1, 2],
-  circleColor: "rgba(31,41,55,1)",
-  fogSettings: {
-    range: [0.8, 8],
-    color: "#dc9f9f",
-    "horizon-blend": 0.5,
-    "high-color": "#245bde",
-    "space-color": "#000000",
-    "star-intensity": 0.15,
+  line: {
+    width: 6,
+    progressColor: "#eb4d4b",
+    nonProgressColor: "rgba(0, 0, 0, 0.7)",
+    dashArray: [1, 2],
+  },
+  point: {
+    circleColor: "rgba(31,41,55,1)",
+    targetCircleColor: "#eb4d4b",
+    textColor: "#fff",
+  },
+  terrain: {
+    demSource: "mapbox://mapbox.mapbox-terrain-dem-v1",
+    exaggeration: 2,
+    fogSettings: {
+      range: [0.8, 8],
+      color: "#dc9f9f",
+      "horizon-blend": 0.5,
+      "high-color": "#245bde",
+      "space-color": "#000000",
+      "star-intensity": 0.15,
+    },
+  },
+  initialMapSettings: {
+    center: [139.767, 35.681],
+    zoom: 1,
+    pitch: 0,
+    bearing: 0,
+    // enable `interactive` option, but disable scroll
+    // (let the user zoom with the controll button instead)
+    interactive: true,
+    scrollZoom: false,
+    projection: "globe",
+    transition: {
+      duration: 300,
+      delay: 0,
+    },
   },
   bounds: [
     [135.774361, 34.684389],
@@ -19,8 +44,6 @@ export const MAP_CONFIG = {
   style: `https://api.maptiler.com/maps/jp-mierune-streets/style.json?key=${
     import.meta.env.VITE_MAPTILER_KEY
   }`,
-  demSource: "mapbox://mapbox.mapbox-terrain-dem-v1",
-  terrainExaggeration: 2,
 };
 
 export const createCircleRadiusExpression = (stationNo: string) => {

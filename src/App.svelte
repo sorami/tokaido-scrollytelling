@@ -25,24 +25,24 @@
     map.setPaintProperty("road-1", "line-gradient", [
       "step",
       ["line-progress"],
-      MAP_CONFIG.progressColor,
+      MAP_CONFIG.line.progressColor,
       roadProgress[stationNo].road_1,
-      MAP_CONFIG.nonProgressColor,
+      MAP_CONFIG.line.nonProgressColor,
     ]);
 
     map.setPaintProperty(
       "boat",
       "line-color",
       42 <= parseInt(stationNo) && parseInt(stationNo) <= 54
-        ? MAP_CONFIG.progressColor
-        : MAP_CONFIG.nonProgressColor
+        ? MAP_CONFIG.line.progressColor
+        : MAP_CONFIG.line.nonProgressColor
     );
     map.setPaintProperty("road-2", "line-gradient", [
       "step",
       ["line-progress"],
-      MAP_CONFIG.progressColor,
+      MAP_CONFIG.line.progressColor,
       roadProgress[stationNo].road_2,
-      MAP_CONFIG.nonProgressColor,
+      MAP_CONFIG.line.nonProgressColor,
     ]);
   };
 
@@ -50,8 +50,8 @@
     map.setPaintProperty("station-circle", "circle-color", [
       "case",
       ["==", ["get", "no"], stationNo],
-      MAP_CONFIG.progressColor,
-      MAP_CONFIG.circleColor,
+      MAP_CONFIG.point.targetCircleColor,
+      MAP_CONFIG.point.circleColor,
     ]);
 
     map.setPaintProperty(
