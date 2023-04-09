@@ -20,6 +20,7 @@ export const MAP_CONFIG = {
     import.meta.env.VITE_MAPTILER_KEY
   }`,
   demSource: "mapbox://mapbox.mapbox-terrain-dem-v1",
+  terrainExaggeration: 2,
 };
 
 export const createCircleRadiusExpression = (stationNo: string) => {
