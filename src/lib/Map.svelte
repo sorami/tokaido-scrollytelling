@@ -23,7 +23,7 @@
         "line-cap": "round",
       },
       paint: {
-        "line-width": 6,
+        "line-width": MAP_CONFIG.lineWidth,
         "line-gradient": MAP_CONFIG.nonProgressColor,
       },
     });
@@ -41,7 +41,7 @@
         "line-cap": "round",
       },
       paint: {
-        "line-width": 6,
+        "line-width": MAP_CONFIG.lineWidth,
         "line-color": MAP_CONFIG.nonProgressColor,
         "line-dasharray": [1, 2],
       },
@@ -61,7 +61,7 @@
         "line-cap": "round",
       },
       paint: {
-        "line-width": 6,
+        "line-width": MAP_CONFIG.lineWidth,
         "line-gradient": [
           "step",
           ["line-progress"],
