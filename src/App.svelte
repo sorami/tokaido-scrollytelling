@@ -70,7 +70,7 @@
   const calculateBearing = (stationNo: string) => {
     const no = parseInt(stationNo);
     if (!(1 <= no && no <= 53)) {
-      return 0; // default bearing
+      return transitionSettings.default.bearing;
     }
 
     // Bearing from the current station to the next station
@@ -95,31 +95,31 @@
       stationData[stationNo].longitude,
       stationData[stationNo].latitude,
     ];
-    const transition = transitionSettings[stationNo];
+    const transition = transitionSettings.stations[stationNo];
 
     if (transition) {
       map.flyTo({
         center,
-        zoom: transition.zoom ?? 13,
-        pitch: transition.pitch ?? 60,
+        zoom: transition.zoom ?? transitionSettings.default.zoom,
+        pitch: transition.pitch ?? transitionSettings.default.pitch,
         bearing: transition.bearing ?? calculateBearing(stationNo),
-        speed: 0.8 ?? transition.speed,
+        speed: transition.speed ?? transitionSettings.default.speed,
       });
     } else {
       map.flyTo({
         center,
-        zoom: 13,
-        pitch: 60,
+        zoom: transitionSettings.default.zoom,
+        pitch: transitionSettings.default.pitch,
         bearing: calculateBearing(stationNo),
-        speed: 0.8,
+        speed: transitionSettings.default.speed,
       });
     }
 
     if (transition.rotate) {
       map.once("moveend", () => {
         const rotateNumber = map.getBearing();
-        map.rotateTo(rotateNumber + 180, {
-          duration: 60000,
+        map.rotateTo(rotateNumber + transitionSettings.rotation.bearing, {
+          duration: transitionSettings.rotation.duration,
           easing: (t) => t,
         });
       });
