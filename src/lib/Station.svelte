@@ -6,8 +6,8 @@
 <div id={data.no} class="step wrapper {alignment}">
   <div class="content card rounded-md">
     <div class="text-center flex flex-col mb-4">
-      <div class="text-2 font-inknut">{data.name_roman}</div>
-      <h2 class="text-xl font-yuji">{data.name}</h2>
+      <div class="text-xs font-inknut">{data.name_roman}</div>
+      <h2 class="text-2xl font-yuji">{data.name}</h2>
     </div>
 
     <div class="mb-4">
