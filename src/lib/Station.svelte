@@ -84,8 +84,11 @@
     }
     .wrapper.lefty,
     .wrapper.righty {
-      width: 84vw;
+      width: 90vw;
       margin: 0 auto;
+    }
+    .content {
+      padding: 1.2em 1em;
     }
     .description-pc {
       display: none;
