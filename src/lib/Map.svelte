@@ -62,13 +62,7 @@
       },
       paint: {
         "line-width": MAP_CONFIG.lineWidth,
-        "line-gradient": [
-          "step",
-          ["line-progress"],
-          "#eb4d4b",
-          0,
-          MAP_CONFIG.nonProgressColor,
-        ],
+        "line-gradient": MAP_CONFIG.nonProgressColor,
       },
     });
   };
