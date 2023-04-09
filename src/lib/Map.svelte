@@ -43,7 +43,7 @@
       paint: {
         "line-width": MAP_CONFIG.lineWidth,
         "line-color": MAP_CONFIG.nonProgressColor,
-        "line-dasharray": [1, 2],
+        "line-dasharray": MAP_CONFIG.lineDashArray,
       },
     });
 
