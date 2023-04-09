@@ -24,7 +24,7 @@ export const MAP_CONFIG = {
   },
   initialMapSettings: {
     center: [139.767, 35.681],
-    zoom: 1,
+    zoom: 4,
     pitch: 0,
     bearing: 0,
     // enable `interactive` option, but disable scroll
