@@ -5,7 +5,7 @@
       /><br
       />強いて同感を求めるような語気でもないから、私は何とも返事しようがない気持をただ微笑に現して頷いてだけいた。
     </p>
-    <div class="text-right text-sm mt-3">
+    <div class="text-right text-sm mt-4">
       <a
         target="_blank"
         rel="noopener noreferrer"
@@ -24,5 +24,11 @@
     margin: 0 auto;
     padding-top: 10vh;
     padding-bottom: 55vh;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      padding: 1.2em;
+    }
   }
 </style>
