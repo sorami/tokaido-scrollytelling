@@ -5,4 +5,5 @@ export const MAP_CONFIG = {
   ],
   progressColor: "#eb4d4b",
   nonProgressColor: "rgba(0, 0, 0, 0.7)",
+  circleColor: "rgba(31,41,55,1)",
 };

@@ -47,7 +47,7 @@
       "case",
       ["==", ["get", "no"], stationNo],
       MAP_CONFIG.progressColor,
-      "rgba(31,41,55,1)",
+      MAP_CONFIG.circleColor,
     ]);
 
     map.setPaintProperty("station-circle", "circle-radius", [

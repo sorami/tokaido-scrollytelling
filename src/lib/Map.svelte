@@ -85,7 +85,7 @@
       source: "station-src",
       layout: {},
       paint: {
-        "circle-color": "rgba(31,41,55,1)",
+        "circle-color": MAP_CONFIG.circleColor,
         "circle-radius": [
           "interpolate",
           ["linear"],
