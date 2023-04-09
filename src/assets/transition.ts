@@ -11,9 +11,13 @@ export const transitionSettings = {
   },
   stations: {
     "0": {
-      zoom: 8,
+      zoom: 11,
       pitch: 0,
       bearing: 0,
+    },
+    // 藤原宿
+    "6": {
+      pitch: 75,
     },
     "10": {
       zoom: 12,

@@ -69,7 +69,7 @@
 
   const calculateBearing = (stationNo: string) => {
     const no = parseInt(stationNo);
-    if (!(1 <= no && no <= 53)) {
+    if (!(0 <= no && no <= 53)) {
       return transitionSettings.default.bearing;
     }
 
