@@ -97,15 +97,23 @@
     ];
     const transition = stationTransition[stationNo];
 
-    console.log(calculateBearing(stationNo));
-
-    map.flyTo({
-      center,
-      zoom: transition.zoom ?? 13,
-      pitch: transition.pitch ?? 60,
-      bearing: transition.bearing ?? calculateBearing(stationNo),
-      speed: 0.8,
-    });
+    if (transition) {
+      map.flyTo({
+        center,
+        zoom: transition.zoom ?? 13,
+        pitch: transition.pitch ?? 60,
+        bearing: transition.bearing ?? calculateBearing(stationNo),
+        speed: 0.8 ?? transition.speed,
+      });
+    } else {
+      map.flyTo({
+        center,
+        zoom: 13,
+        pitch: 60,
+        bearing: calculateBearing(stationNo),
+        speed: 0.8,
+      });
+    }
 
     if (transition.rotate) {
       map.once("moveend", () => {
