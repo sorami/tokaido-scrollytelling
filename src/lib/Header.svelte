@@ -1,5 +1,5 @@
 <script>
-  const scrollToFirstCard = () => {
+  const scrollToFirstStation = () => {
     const element = document.querySelector(".station");
     element.scrollIntoView({ behavior: "smooth" });
   };
@@ -48,8 +48,8 @@
     id="down-arrow"
     class="m-auto mt-5 w-12 h-12 opacity-50 rounded-full cursor-pointer"
     hover="opacity-100 bg-orange-600/90"
-    on:click={scrollToFirstCard}
-    on:keypress={scrollToFirstCard}
+    on:click={scrollToFirstStation}
+    on:keypress={scrollToFirstStation}
   >
     <div
       class="inline-block i-material-symbols-keyboard-double-arrow-down w-12 h-12"
