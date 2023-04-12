@@ -59,3 +59,9 @@
 For the map tiles, I have used [JP MIERUNE Streets style](https://www.mierune.co.jp/) on [MapTiler](https://www.maptiler.com/).
 
 The implementation was initially based on the [mapbox/storytelling](https://github.com/mapbox/storytelling) template (thanks for the inspiration!), though I have rewritten pretty much everything in the end :)
+
+## Prior Works
+
+- [東海道五十三次 浮世絵地図](https://gunmagisgeek.com/datavis/toukaidou/) (@shimizu, GUNMA GIS GEEK)
+- [旧東海道の地図 | 旧街道モバイルマップ](https://gcy.jp/kkd/tokaido.html)
+- [浮世絵マップ：歌川広重「東海道五十三次」 | ESRI ジャパン](https://www.esrij.com/news/details/70173/)
