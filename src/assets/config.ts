@@ -63,7 +63,7 @@ export const createCircleRadiusExpression = (stationNo: string) => {
     ["linear"],
     ["zoom"],
     6,
-    ["case", ["==", ["get", "no"], stationNo], 8, 0],
+    ["case", ["==", ["get", "no"], stationNo], 10, 0],
     11,
     ["case", ["==", ["get", "no"], stationNo], 28, 18],
   ];
@@ -77,6 +77,6 @@ export const createTextSizeExpression = (stationNo: string) => {
     8,
     ["case", ["==", ["get", "no"], stationNo], 10, 0],
     11,
-    ["case", ["==", ["get", "no"], stationNo], 28, 18],
+    ["case", ["==", ["get", "no"], stationNo], 28, 12],
   ];
 };
