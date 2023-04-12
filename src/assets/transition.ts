@@ -21,6 +21,16 @@ export const transitionSettings = {
     "2": {
       pitch: 75,
     },
+    "3": {
+      zoom: 14,
+    },
+    "4": {
+      zoom: 16,
+      pitch: 65,
+    },
+    "5": {
+      zoom: 15,
+    },
     // 藤原宿
     "6": {
       pitch: 75,
