@@ -2,6 +2,7 @@ import {
   defineConfig,
   presetAttributify,
   presetUno,
+  presetIcons,
   presetWebFonts,
 } from "unocss";
 import transformerDirectives from "@unocss/transformer-directives";
@@ -14,6 +15,7 @@ export default defineConfig({
   presets: [
     presetAttributify(),
     presetUno(),
+    presetIcons(),
     presetWebFonts({
       provider: "google",
       fonts: {
