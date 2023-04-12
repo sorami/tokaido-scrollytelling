@@ -63,5 +63,6 @@ The implementation was initially based on the [mapbox/storytelling](https://gith
 ## Prior Works
 
 - [東海道五十三次 浮世絵地図](https://gunmagisgeek.com/datavis/toukaidou/) ([@\_shimizu](https://twitter.com/_shimizu), [GUNMA GIS GEEK](https://gunmagisgeek.com/))
-- [旧東海道の地図 | 旧街道モバイルマップ](https://gcy.jp/kkd/tokaido.html)
-- [浮世絵マップ：歌川広重「東海道五十三次」 | ESRI ジャパン](https://www.esrij.com/news/details/70173/)
+- [旧東海道の地図 | 旧街道モバイルマップ](https://gcy.jp/kkd/tokaido.html) (GPSCycling, Yobito KAYANUMA)
+- [浮世絵マップ：歌川広重「東海道五十三次」 | ESRI ジャパン](https://www.esrij.com/news/details/70173/) (Esri Japan)
+- [歌川広重『東海道五十三次』宿場の一覧とルートを地図アプリに表示 | おうちで名画印刷](https://creativepark.canon/meiga/blog/1654/) (CANON INC.)
