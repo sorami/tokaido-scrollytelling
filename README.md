@@ -50,6 +50,12 @@
     "extract_ja":"日本橋（にほんばし）は、もともとは1603年（慶長8年）に江戸で最初に町割りが行われた場所にあった川に架けられた木造の橋で、その後何代にもわたり掛け替えられ、現在のものは1911年に完成したもので、東京都中央区の日本橋川に架かり、石造りの2連アーチ橋となっている。",
     "extract_en":"Nihonbashi (日本橋) is a business district of Chūō, Tokyo, Japan which grew up around the bridge of the same name which has linked two sides of the Nihonbashi River at this site since the 17th century.  The first wooden bridge was completed in 1603. The current bridge,  designed by Tsumaki Yorinaka and constructed of stone on a steel frame, dates from 1911.  The district covers a large area to the north and east of the bridge, reaching Akihabara to the north and the Sumida River to the east. Ōtemachi is to the west and Yaesu and Kyobashi to the south.\nNihonbashi, together with Kyobashi and Kanda, is the core of Shitamachi, the original downtown center of Edo-Tokyo, before the rise of newer secondary centers such as Shinjuku and Shibuya."
   },
-  ...
-]
 ```
+
+## Code
+
+[Mapbox GL JS](https://www.mapbox.com/mapbox-gljs) for the interactive map. [Scrollama](https://github.com/russellsamora/scrollama) for the scrollytelling. [Turf.js](https://turfjs.org/) for the geospatial calculation. [Svelte](https://svelte.dev/) for the user interfaces. [UnoCSS](https://unocss.dev/) for styling.
+
+For the map tiles, I have used [JP MIERUNE Streets style](https://www.mierune.co.jp/) on [MapTiler](https://www.maptiler.com/).
+
+The implementation was initially based on the [mapbox/storytelling](https://github.com/mapbox/storytelling) template (thanks for the inspiration!), though I have rewritten pretty much everything in the end :)
