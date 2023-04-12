@@ -123,7 +123,7 @@
   };
 
   const add3dTerrain = () => {
-    map.setFog(MAP_CONFIG.terrain.fogSettings);
+    map.setFog(MAP_CONFIG.terrain.fog.day);
 
     map.addSource("mapbox-dem", {
       type: "raster-dem",

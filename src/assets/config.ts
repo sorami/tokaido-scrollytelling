@@ -13,13 +13,24 @@ export const MAP_CONFIG = {
   terrain: {
     demSource: "mapbox://mapbox.mapbox-terrain-dem-v1",
     exaggeration: 2,
-    fogSettings: {
-      range: [0.8, 8],
-      color: "#dc9f9f",
-      "horizon-blend": 0.5,
-      "high-color": "#245bde",
-      "space-color": "#000000",
-      "star-intensity": 0.15,
+    fog: {
+      switch_probability: 0.7,
+      day: {
+        range: [0.5, 10],
+        "horizon-blend": 0.3,
+        color: "white",
+        "high-color": "#0652DD",
+        "space-color": "#1289A7",
+        "star-intensity": 0.0,
+      },
+      night: {
+        range: [0.5, 10],
+        "horizon-blend": 0.3,
+        color: "#242B4B",
+        "high-color": "#161B36",
+        "space-color": "#0B1026",
+        "star-intensity": 0.8,
+      },
     },
   },
   initialMapSettings: {

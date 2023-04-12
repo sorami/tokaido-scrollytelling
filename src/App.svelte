@@ -18,6 +18,8 @@
 
   let map;
 
+  let fogStyle: "day" | "night" = "day";
+
   const scroller = scrollama();
 
   const updateRoadProgress = (stationNo) => {
@@ -139,6 +141,16 @@
         updateStationCircle(stationNo);
         updateRoadProgress(stationNo);
         updateMapPosition(stationNo);
+
+        if (Math.random() < MAP_CONFIG.terrain.fog.switch_probability) {
+          if (fogStyle === "day") {
+            map.setFog(MAP_CONFIG.terrain.fog.night);
+            fogStyle = "night";
+          } else if (fogStyle === "night") {
+            map.setFog(MAP_CONFIG.terrain.fog.day);
+            fogStyle = "day";
+          }
+        }
       })
       .onStepExit(async (response) => {
         response.element.classList.remove("active");
