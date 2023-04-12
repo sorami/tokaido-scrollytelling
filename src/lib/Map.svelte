@@ -20,6 +20,15 @@
     bearing: 0,
   };
 
+  let getMapPosition = () => {
+    if (!map) return;
+    const { lng, lat } = map.getCenter();
+    const zoom = map.getZoom();
+    const bearing = map.getBearing();
+    const pitch = map.getPitch();
+    mapPosition = { lng, lat, zoom, bearing, pitch };
+  };
+
   mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
   const addRoadLayers = () => {
@@ -153,18 +162,10 @@
     map.on("click", "station-circle", onClickStation);
     map.on("click", "station-label", onClickStation);
 
+    getMapPosition();
     if (IS_DEBUG) {
       map.on("move", () => {
-        const { lng, lat } = map.getCenter();
-        const zoom = map.getZoom();
-        const bearing = map.getBearing();
-        const pitch = map.getPitch();
-        mapPosition = { lng, lat, zoom, bearing, pitch };
-        console.log(
-          `lng: ${lng.toFixed(4)}, lat: ${lat.toFixed(4)}, zoom: ${zoom.toFixed(
-            2
-          )}, bearing: ${bearing.toFixed(2)}, pitch: ${pitch.toFixed(2)}`
-        );
+        getMapPosition();
       });
     }
   });
@@ -174,7 +175,7 @@
 
 {#if IS_DEBUG}
   <div
-    class="fixed bottom-10 left-16 bg-gray-900 p-3 rounded opacity-70 font-sans"
+    class="fixed bottom-10 left-16 bg-gray-900 p-3 rounded opacity-70 font-sans w-36"
   >
     <div>{mapPosition.lng.toFixed(2)}, {mapPosition.lat.toFixed(2)}</div>
     <div class="flex justify-between items-center">
