@@ -30,6 +30,7 @@
           >Wikipedia (ja)</a
         >
       </p>
+      <br />
       <p class="font-roman">
         "{data.extract_en}"
         <a href={data.wikipedia_en} target="_blank" rel="noopener noreferrer"
