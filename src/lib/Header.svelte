@@ -1,3 +1,10 @@
+<script>
+  const scrollToFirstCard = () => {
+    const element = document.querySelector(".station");
+    element.scrollIntoView({ behavior: "smooth" });
+  };
+</script>
+
 <div id="header" class="card">
   <h1 class="text-3xl font-yuji">東海道中スクロール栗毛</h1>
 
@@ -36,6 +43,18 @@
       >Sorami Hisamoto</a
     >, 2023.04
   </div>
+
+  <div
+    id="down-arrow"
+    class="m-auto mt-5 w-12 h-12 opacity-50 rounded-full cursor-pointer"
+    hover="opacity-100 bg-orange-600/90"
+    on:click={scrollToFirstCard}
+    on:keypress={scrollToFirstCard}
+  >
+    <div
+      class="inline-block i-material-symbols-keyboard-double-arrow-down w-12 h-12"
+    />
+  </div>
 </div>
 
 <style>
@@ -48,5 +67,19 @@
     text-align: center;
     margin: 0;
     padding: 3vh 2vw;
+  }
+
+  #down-arrow {
+    animation: MoveUpDown 2000ms ease-in-out infinite;
+  }
+
+  @keyframes MoveUpDown {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(1em);
+    }
   }
 </style>

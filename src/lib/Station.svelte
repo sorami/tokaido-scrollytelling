@@ -3,7 +3,7 @@
   const alignment = data.no % 2 == 0 ? "righty" : "lefty";
 </script>
 
-<div id={data.no} class="step wrapper {alignment}">
+<div id={data.no} class="step station wrapper {alignment}">
   <div class="content card rounded-md">
     <div class="text-center flex flex-col mb-4">
       <div class="text-xs font-inknut">{data.name_roman}</div>
@@ -56,7 +56,8 @@
     position: relative;
     z-index: 5;
     width: 33vw;
-    padding-bottom: 50vh;
+    padding-top: 10vh;
+    padding-bottom: 40vh;
   }
 
   .wrapper.lefty {
