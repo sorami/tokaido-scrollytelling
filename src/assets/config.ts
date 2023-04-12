@@ -2,11 +2,11 @@ export const MAP_CONFIG = {
   line: {
     width: 6,
     progressColor: "#eb4d4b",
-    nonProgressColor: "rgba(0, 0, 0, 0.7)",
+    nonProgressColor: "#4b5563",
     dashArray: [1, 2],
   },
   point: {
-    circleColor: "rgba(31,41,55,1)",
+    circleColor: "#4b5563",
     targetCircleColor: "#eb4d4b",
     textColor: "#fff",
   },
@@ -52,11 +52,9 @@ export const createCircleRadiusExpression = (stationNo: string) => {
     ["linear"],
     ["zoom"],
     6,
-    ["case", ["==", ["get", "no"], stationNo], 10, 0],
-    8,
-    ["case", ["==", ["get", "no"], stationNo], 18, 12],
-    10,
-    ["case", ["==", ["get", "no"], stationNo], 24, 12],
+    ["case", ["==", ["get", "no"], stationNo], 8, 0],
+    11,
+    ["case", ["==", ["get", "no"], stationNo], 28, 18],
   ];
 };
 
@@ -65,11 +63,9 @@ export const createTextSizeExpression = (stationNo: string) => {
     "interpolate",
     ["linear"],
     ["zoom"],
-    6,
-    ["case", ["==", ["get", "no"], stationNo], 10, 0],
     8,
-    ["case", ["==", ["get", "no"], stationNo], 18, 12],
-    10,
-    ["case", ["==", ["get", "no"], stationNo], 24, 12],
+    ["case", ["==", ["get", "no"], stationNo], 10, 0],
+    11,
+    ["case", ["==", ["get", "no"], stationNo], 24, 18],
   ];
 };
