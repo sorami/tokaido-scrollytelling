@@ -62,6 +62,6 @@ The implementation was initially based on the [mapbox/storytelling](https://gith
 
 ## Prior Works
 
-- [東海道五十三次 浮世絵地図](https://gunmagisgeek.com/datavis/toukaidou/) (@shimizu, GUNMA GIS GEEK)
+- [東海道五十三次 浮世絵地図](https://gunmagisgeek.com/datavis/toukaidou/) ([@\_shimizu](https://twitter.com/_shimizu), [GUNMA GIS GEEK](https://gunmagisgeek.com/))
 - [旧東海道の地図 | 旧街道モバイルマップ](https://gcy.jp/kkd/tokaido.html)
 - [浮世絵マップ：歌川広重「東海道五十三次」 | ESRI ジャパン](https://www.esrij.com/news/details/70173/)
