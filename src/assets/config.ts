@@ -1,13 +1,13 @@
 export const MAP_CONFIG = {
   line: {
     width: 6,
-    progressColor: "#eb4d4b",
+    progressColor: "#ea580c",
     nonProgressColor: "#4b5563",
     dashArray: [1, 2],
   },
   point: {
     circleColor: "#4b5563",
-    targetCircleColor: "#eb4d4b",
+    targetCircleColor: "#ea580c",
     textColor: "#fff",
   },
   terrain: {
