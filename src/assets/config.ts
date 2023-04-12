@@ -66,6 +66,6 @@ export const createTextSizeExpression = (stationNo: string) => {
     8,
     ["case", ["==", ["get", "no"], stationNo], 10, 0],
     11,
-    ["case", ["==", ["get", "no"], stationNo], 24, 18],
+    ["case", ["==", ["get", "no"], stationNo], 28, 18],
   ];
 };
