@@ -46,13 +46,12 @@
 
   <div
     id="down-arrow"
-    class="m-auto mt-5 w-12 h-12 opacity-50 rounded-full cursor-pointer"
-    hover="opacity-100 bg-orange-600/90"
+    class="m-auto mt-5 w-10 h-10 opacity-100 rounded-full cursor-pointer"
     on:click={scrollToFirstStation}
     on:keypress={scrollToFirstStation}
   >
     <div
-      class="inline-block i-material-symbols-keyboard-double-arrow-down w-12 h-12"
+      class="inline-block i-material-symbols-keyboard-double-arrow-down w-10 h-10"
     />
   </div>
 </div>
@@ -71,6 +70,11 @@
 
   #down-arrow {
     animation: MoveUpDown 2000ms ease-in-out infinite;
+    transition: background-color 0.6s linear;
+  }
+  #down-arrow:hover {
+    @apply bg-orange-600/90;
+    transition: background-color 0.1s linear;
   }
 
   @keyframes MoveUpDown {
