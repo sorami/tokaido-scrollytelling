@@ -1,7 +1,7 @@
 <div id="footer" class="card">
-  <div class="max-w-2xl text-center m-auto flex flex-col gap-y-5">
+  <div class="max-w-2xl text-center m-auto flex flex-col gap-y-8 font-sans">
     <div>
-      <h2>Data</h2>
+      <h3>Data</h3>
       <p>
         Images: 歌川広重「東海道五拾三次之内」（保永堂版） - <a
           target="_blank"
@@ -37,18 +37,22 @@
     </div>
 
     <div>
-      <h2>Code</h2>
-      <p>Mapbox GL JS</p>
-      <p>Svelte</p>
-      <p>Scrollama</p>
+      <h3>Code</h3>
+      <p>Mapbox GL JS, Scrollama, Svelte, Turf.js, UnoCSS, ...</p>
     </div>
 
-    <div>
-      <a
+    <div class="my-6 text-sm">
+      Data & Code → <a
         target="_blank"
         rel="noopener noreferrer"
-        href="https://sorami.dev"
-        class="text-sm">sorami.dev</a
+        href="https://github.com/sorami/tokaido-scrollytelling"
+        >https://github.com/sorami/tokaido-scrollytelling</a
+      >
+    </div>
+
+    <div text-sm>
+      <a target="_blank" rel="noopener noreferrer" href="https://sorami.dev"
+        >sorami.dev</a
       >
     </div>
   </div>
@@ -63,11 +67,17 @@
     position: relative;
     text-align: center;
     margin: 0;
-    padding: 2vh 2vw;
+    padding: 3vh 2vw;
   }
 
-  h2 {
-    @apply text-sm font-bold font-roman;
+  p > a,
+  p > a:visited {
+    @apply text-gray-300;
+    text-decoration: underline;
+  }
+
+  h3 {
+    @apply text-sm font-bold;
   }
 
   p {
