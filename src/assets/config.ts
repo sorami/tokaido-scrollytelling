@@ -14,7 +14,7 @@ export const MAP_CONFIG = {
     demSource: "mapbox://mapbox.mapbox-terrain-dem-v1",
     exaggeration: 2,
     fog: {
-      switch_probability: 0.7,
+      switch_probability: 0.5,
       day: {
         range: [0.5, 10],
         "horizon-blend": 0.3,
