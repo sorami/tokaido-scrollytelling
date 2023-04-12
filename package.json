@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@turf/bearing": "^6.5.0",
+    "@watergis/mapbox-gl-pitch-toggle-control": "^1.0.3",
     "intersection-observer": "^0.12.2",
     "mapbox-gl": "^2.13.0",
     "scrollama": "^3.2.0"

@@ -2,6 +2,8 @@
   import { onMount } from "svelte";
   import mapboxgl from "mapbox-gl";
   import "mapbox-gl/dist/mapbox-gl.css";
+  import PitchToggleControl from "@watergis/mapbox-gl-pitch-toggle-control";
+  import "@watergis/mapbox-gl-pitch-toggle-control/css/styles.css";
   import {
     MAP_CONFIG,
     createCircleRadiusExpression,
@@ -151,6 +153,10 @@
 
     map.addControl(new mapboxgl.ScaleControl(), "bottom-right");
     map.addControl(new mapboxgl.NavigationControl(), "bottom-left");
+    map.addControl(
+      new PitchToggleControl({ pitch: 75, bearing: 0 }),
+      "bottom-left"
+    );
     map.addControl(new mapboxgl.GeolocateControl(), "bottom-left");
 
     map.on("load", async () => {
